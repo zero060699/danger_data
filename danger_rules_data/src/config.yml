@@ -1,0 +1,18 @@
+opencti:
+  url: 'http://localhost:8080'
+  token: '0c1e9f67-0f51-4658-bbfb-8cd4bf8c1cb5'
+
+connector:
+  id: 'd93fbd1f-5257-4295-b829-8589f6577e19'
+  type: 'EXTERNAL_IMPORT'
+  name: 'Data Danger IP list'
+  scope: 'datadanger'
+  confidence_level: 40 # From 0 (Unknown) to 100 (Fully trusted)
+  create_indicator: True
+  update_existing_data: True
+  log_level: 'info'
+
+datadanger:
+  url: 'https://danger.rulez.sk/projects/bruteforceblocker/blist.php'
+  create_indicators: True
+  interval: 1 # In days, must be strictly greater than 1
